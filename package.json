@@ -5,7 +5,7 @@
   "homepage": "https://instakilogram.netlify.com",
   "dependencies": {
     "@emotion/styled": "^10.0.5",
-    "nprogress": "^0.2.0",
+    "nprogress": "https://github.com/iamruhul/nprogress.git",
     "prop-types": "^15.6.2",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
