@@ -9,7 +9,7 @@
   border: 0;
   outline: 0;
   overflow: hidden;
-  padding: 9px 8px;
+  padding: 11px 8px;
   text-overflow: ellipsis;
   background: #fafafa;
   border-radius: 3px;
@@ -29,10 +29,11 @@
     position: absolute;
     color: #3897f0;
     right: 10px;
-    top: 9px;
+    top: 11px;
+    font-size: 14px;
 
     &.fa-unlock {
-      color: red;
+      color: rgb(224, 15, 0);
     }
   }
 }

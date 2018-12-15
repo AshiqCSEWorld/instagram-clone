@@ -1,0 +1,66 @@
+.login {
+  padding: 10px 0;
+  & &__signup {
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: #262626;
+      font-size: 14px;
+      margin: 15px;
+      text-align: center;
+    }
+  }
+}
+
+.login-content {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__wrapper {
+    padding-bottom: 20px;
+  }
+
+  &__form {
+    padding: 0 40px 20px;
+  }
+
+  &__submit {
+    margin-top: 8px;
+  }
+
+  &__error {
+    color: #ed4956;
+    text-align: center;
+    margin: 10px 40px;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  &__logo {
+    margin: 22px auto 12px;
+    display: block;
+    overflow: hidden;
+    text-indent: 110%;
+    white-space: nowrap;
+  }
+
+  &__or {
+    margin: 10px 40px 18px;
+  }
+
+  &__forgot-pass {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    text-align: center;
+    color: #003569;
+    text-align: center;
+    display: block;
+  }
+}
