@@ -1,0 +1,18 @@
+@import "~reset-css/sass/reset";
+
+*,*::after,*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body{
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+.container{
+  max-width: 935px;
+  margin: 0 auto;
+  width: 100%;
+}
