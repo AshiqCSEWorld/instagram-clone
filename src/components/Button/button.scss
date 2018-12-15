@@ -1,0 +1,27 @@
+.button-component {
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  border-radius: 4px;
+  color: #fff;
+  position: relative;
+  padding: 7px 9px;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-overflow: ellipsis;
+  appearance: none;
+  border: 0;
+  display: block;
+  width: 100%;
+
+  &:active{
+    opacity: .6;
+  }
+
+  &[disabled]{
+    opacity: .3;
+    cursor: auto;
+  }
+}
