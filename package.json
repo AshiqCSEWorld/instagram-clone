@@ -2,9 +2,10 @@
   "name": "instagram-clone-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://instakilogram.netlify.com",
+  "homepage": "https://instakilogram.netlify.com",
   "dependencies": {
     "@emotion/styled": "^10.0.5",
+    "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
