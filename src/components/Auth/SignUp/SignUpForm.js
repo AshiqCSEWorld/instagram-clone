@@ -5,13 +5,10 @@ import Button from '../../Button';
 export default function SignUpForm() {
   return (
     <form className="auth-content__form">
-      <Input
-        className="auth-content__username"
-        name="username"
-        required
-        type="text"
-        placeholder="Username"
-      />
+      <Input name="email" required type="email" placeholder="Email" />
+      <Input name="First_name" required type="text" placeholder="First Name" />
+      <Input name="Last_name" required type="text" placeholder="Last Name" />
+      <Input name="username" required type="text" placeholder="Username" />
       <Input
         name="password"
         className="auth-content__password"
@@ -20,7 +17,7 @@ export default function SignUpForm() {
         placeholder="Password"
       />
       <Button className="auth-content__submit" type="submit">
-        Log In
+        Sign Up
       </Button>
     </form>
   );
