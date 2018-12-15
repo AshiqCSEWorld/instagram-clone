@@ -6,7 +6,7 @@ import PublicRoute from '../ControlledRoute/PublicRoute';
 
 import HomePage from '../Homepage';
 import AuthPage from '../Auhtpage';
-import NotFound from '../NoteFound';
+import NotFound from '../../components/NoteFound';
 
 const App = () => (
   <Switch>

@@ -13,6 +13,7 @@ const AuthPage = ({ match }) => (
       <Route path={`${match.path}/signup`} component={SignUp} />
       <Route component={NoteFound} />
     </Switch>
+
     <AuthFooter />
   </>
 );
