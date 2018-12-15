@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './authfooter.scss';
+
 const AuthFooter = () => (
   <footer className="auth-footer">
     <section className="auth-footer__links">
