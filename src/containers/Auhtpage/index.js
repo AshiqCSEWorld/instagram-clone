@@ -1,19 +1,25 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import './authpage.scss';
+import "./authpage.scss";
 
-import NoteFound from '../../components/NoteFound';
-import Login from '../../components/Auth/Login';
-import SignUp from '../../components/Auth/SignUp';
-import AuthFooter from '../../components/AuthFooter';
+import AuthFooter from "../../components/AuthFooter";
+import asyncLoad from "../../utils/asyncLoad";
 
 const AuthPage = ({ match }) => (
   <div className="authpage">
     <Switch>
-      <Route path={`${match.path}/login`} component={Login} />
-      <Route path={`${match.path}/signup`} component={SignUp} />
-      <Route component={NoteFound} />
+      <Route
+        path={`${match.path}/login`}
+        component={asyncLoad(() => import("../../components/Auth/Login"))}
+      />
+      <Route
+        path={`${match.path}/signup`}
+        component={asyncLoad(() => import("../../components/Auth/SignUp"))}
+      />
+      <Route
+        component={asyncLoad(() => import("../../components/NoteFound"))}
+      />
     </Switch>
 
     <AuthFooter />

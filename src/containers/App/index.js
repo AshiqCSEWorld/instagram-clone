@@ -4,10 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import PrivateRoute from "../ControlledRoute/PrivateRoute";
 import PublicRoute from "../ControlledRoute/PublicRoute";
 
-// import HomePage from '../Homepage';
-// import AuthPage from "../Auhtpage";
-// import NotFound from "../../components/NoteFound";
 import asyncLoad from "../../utils/asyncLoad";
+import AuthPage from "../Auhtpage";
 
 const App = () => (
   <Switch>
@@ -16,10 +14,7 @@ const App = () => (
       exact
       component={asyncLoad(() => import("../Homepage"))}
     />
-    <PublicRoute
-      path="/auth"
-      component={asyncLoad(() => import("../Auhtpage"))}
-    />
+    <PublicRoute path="/auth" component={AuthPage} />
     <Route component={asyncLoad(() => import("../../components/NoteFound"))} />
   </Switch>
 );
