@@ -24,6 +24,8 @@ export default importComponent => props => {
   }, []);
 
   // return the loaded component
-  const Component = loadedComponent || <div />;
+  const Component = loadedComponent || (
+    <div style={{ flexGrow: 1 }}>..</div>
+  );
   return Component;
 };
