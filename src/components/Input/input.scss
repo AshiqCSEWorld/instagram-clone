@@ -1,0 +1,38 @@
+.styled-password__wrapper {
+  position: relative;
+}
+
+.styled-input {
+  width: 100%;
+  margin-bottom: 6px;
+  border: 0;
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  padding: 9px 8px;
+  text-overflow: ellipsis;
+  background: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+
+  &::placeholder {
+    color: #999;
+    font-size: 12px;
+  }
+
+  &:focus {
+    border: 1px solid #b2b2b2;
+  }
+
+  &--password + .fas {
+    cursor: pointer;
+    position: absolute;
+    color: #3897f0;
+    right: 10px;
+    top: 9px;
+
+    &.fa-unlock {
+      color: red;
+    }
+  }
+}
