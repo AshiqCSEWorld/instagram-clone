@@ -11,7 +11,7 @@ export default function Policy() {
       >
         Terms
       </a>
-      . Learn how we collect, use and share your data in our
+      ,
       <a
         rel="noopener noreferrer"
         target="_blank"
@@ -19,7 +19,7 @@ export default function Policy() {
       >
         Data Policy
       </a>
-      and how we use cookies and similar technology in our
+      and
       <a
         rel="noopener noreferrer"
         target="_blank"
