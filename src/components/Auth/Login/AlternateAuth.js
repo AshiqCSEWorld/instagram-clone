@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Card from '../../Card';
 
-export default function AlternateAuth({}) {
+export default function AlternateAuth() {
   return (
     <Card className="auth__signup">
       <p>Don't have an account?</p>
