@@ -28,24 +28,7 @@
     "not op_mini all"
   ],
   "eslintConfig": {
-    "extends": "airbnb",
-    "rules": {
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "react/prop-types": [
-        "enabled",
-        {
-          "ignore": "ignore"
-        }
-      ]
-    }
+    "extends": "react-app"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
