@@ -2,12 +2,10 @@ import React from 'react';
 import './button.scss';
 
 const Button = (props) => {
-  const {
-    disabled, className, type = 'button', ...rest
-  } = props;
+  const { className = 'button', ...rest } = props;
 
   return (
-    <button type={type} className={`button-component ${className}`}>
+    <button {...rest} className={`button-component ${className}`}>
       {rest.children}
     </button>
   );
