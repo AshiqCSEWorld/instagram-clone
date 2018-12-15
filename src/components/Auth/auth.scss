@@ -25,6 +25,14 @@
     padding-bottom: 20px;
   }
 
+  &__logo {
+    margin: 22px auto 12px;
+    display: block;
+    overflow: hidden;
+    text-indent: 110%;
+    white-space: nowrap;
+  }
+
   &__form {
     padding: 0 40px 20px;
   }
@@ -37,7 +45,7 @@
     text-align: center;
     margin: 10px 40px;
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.4;
     margin-bottom: 20px;
 
     &--error {
@@ -52,14 +60,6 @@
         margin: 0 5px;
       }
     }
-  }
-
-  &__logo {
-    margin: 22px auto 12px;
-    display: block;
-    overflow: hidden;
-    text-indent: 110%;
-    white-space: nowrap;
   }
 
   &__or {
