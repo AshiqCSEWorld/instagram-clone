@@ -13,9 +13,10 @@ export default importComponent => props => {
   useEffect(() => {
     let mounted = true;
 
-    importComponent().then(
-      ({ default: C }) => mounted && setComponent(<C {...props} />)
-    );
+    mounted &&
+      importComponent().then(
+        ({ default: C }) => mounted && setComponent(<C {...props} />)
+      );
 
     // componentUnMount
     return () => (mounted = false);
