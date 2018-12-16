@@ -5,6 +5,6 @@ import auth from '../../utils/auth';
 export default ({ component: Component, ...rest }) => (
   <Route
     {...rest}
-    render={props => (!auth.getToken() ? <Component {...props} /> : <Redirect to="/" />)}
+    render={props => (!auth.loggedIn() ? <Component {...props} /> : <Redirect to="/" />)}
   />
 );
