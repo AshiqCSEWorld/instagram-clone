@@ -16,16 +16,12 @@ export default importComponent => props => {
     importComponent().then(
       ({ default: C }) => mounted && setComponent(<C {...props} />)
     );
-    // when the component unmounts
-    return () => {
-      nprogress.done();
-      mounted = false;
-    };
+
+    // componentUnMount
+    return () => (mounted = false);
   }, []);
 
   // return the loaded component
-  const Component = loadedComponent || (
-    <div style={{ flexGrow: 1 }}>..</div>
-  );
+  const Component = loadedComponent || <div style={{ flexGrow: 1 }}>..</div>;
   return Component;
 };
