@@ -2,4 +2,11 @@
   display: flex;
   flex-flow: column;
   min-height: 100%;
+
+  &__main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
