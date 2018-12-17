@@ -14,7 +14,7 @@ export function AuthLoading() {
       primaryColor="#f3f3f3"
       secondaryColor="#ecebeb"
     >
-      <rect x="2.52" y="-2" rx="5" ry="5" width="350" height="400" />
+      <rect x="0" y="0" rx="0" ry="0" width="350" height="400" />
       <rect x="0" y="405" rx="0" ry="0" width="350" height="70" />
     </ContentLoader>
   );
