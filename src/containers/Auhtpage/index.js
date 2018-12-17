@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import "./authpage.scss";
 
 import AuthFooter from "../../components/AuthFooter";
-import asyncLoad from "../../utils/asyncLoad";
+import asyncLoad from "./authLoading";
 
 const AuthPage = ({ match }) => (
   <div className="authpage">

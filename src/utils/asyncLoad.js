@@ -1,28 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import Loadable from "react-loadable";
 import nprogress from "nprogress";
-import "nprogress/nprogress.css";
 
-export default importComponent => props => {
-  const [loadedComponent, setComponent] = useState(null);
+export default (loader, Loading = <div>..</div>) =>
+  Loadable({
+    loader,
+    loading: () => {
+      useEffect(() => {
+        nprogress.start();
+        return () => nprogress.done();
+      }, []);
 
-  // this works like componentwillMount
-  if (!nprogress.isStarted()) nprogress.start();
-
-  if (loadedComponent) nprogress.done();
-
-  useEffect(() => {
-    let mounted = true;
-
-    mounted &&
-      importComponent().then(
-        ({ default: C }) => mounted && setComponent(<C {...props} />)
-      );
-
-    // componentUnMount
-    return () => (mounted = false);
-  }, []);
-
-  // return the loaded component
-  const Component = loadedComponent || <div style={{ flexGrow: 1 }}>..</div>;
-  return Component;
-};
+      return <Loading />;
+    }
+  });
