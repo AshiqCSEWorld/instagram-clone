@@ -1,27 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as login from "reduxStore/actions/auth/login";
 
-import './login.scss';
-import '../auth.scss';
+import "./login.scss";
+import "../auth.scss";
 
-import Card from '../../Card';
-import AuthLogo from '../../LoginLogo';
-import OrSection from '../../OrSection';
-import AlternateAuth from './AlternateAuth';
-import LoginForm from './LoginForm';
-import ShowError from './ShowError';
+import Card from "../../Card";
+import AuthLogo from "../../LoginLogo";
+import OrSection from "../../OrSection";
+import AlternateAuth from "./AlternateAuth";
+import LoginForm from "./LoginForm";
+import ShowError from "./ShowError";
 
-const Login = ({ error = false }) => (
+const Login = props => (
   <main className="container auth">
     <div className="auth-content">
       <Card className="auth-content__wrapper">
         <AuthLogo />
-        <LoginForm />
+        <LoginForm login={props.login} loginPending={props.pending} />
         <OrSection className="auth-content__or" />
 
-        {error && <ShowError />}
+        {props.error && <ShowError error={props.payload} />}
 
-        <Link to="/auth/forgot-password" className="auth-content__forgot-pass secondary-color">
+        <Link
+          to="/auth/forgot-password"
+          className="auth-content__forgot-pass secondary-color"
+        >
           Forgot password?
         </Link>
       </Card>
@@ -31,4 +36,11 @@ const Login = ({ error = false }) => (
   </main>
 );
 
-export default Login;
+export default connect(
+  ({ auth }) => ({
+    error: auth.loginError,
+    payload: auth.loginPayload,
+    pending: auth.loginPending
+  }),
+  login
+)(Login);

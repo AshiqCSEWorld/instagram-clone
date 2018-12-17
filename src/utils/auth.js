@@ -1,21 +1,27 @@
 import decode from "jwt-decode";
+import axios from "axios";
 
 export default {
   // Initializing important variables
   domain: "http://localhost:8080", // API server domain
 
-  login(username, password) {
+  login(userName, password) {
     // Get a token from api server using the fetch api
-    return this.fetch(`${this.domain}/login`, {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        password
-      })
-    }).then(res => {
-      this.setToken(res.token); // Setting the token in localStorage
-      return Promise.resolve(res);
-    });
+    return axios
+      .post(
+        this.domain + "/auth/login",
+        {
+          userName,
+          password
+        },
+        {
+          headers: this.headers()
+        }
+      )
+      .then(res => {
+        this.setToken(res.data.token);
+        return res;
+      });
   },
 
   loggedIn() {
@@ -56,7 +62,7 @@ export default {
     return decode(this.getToken());
   },
 
-  fetch(url, options) {
+  headers() {
     // performs api calls sending the required authentication headers
     const headers = {
       Accept: "application/json",
@@ -64,28 +70,8 @@ export default {
     };
 
     // Setting Authorization header
-    // Authorization: Bearer xxxxxxx.xxxxxxxx.xxxxxx
-    if (this.loggedIn()) {
-      headers["Authorization"] = "Bearer " + this.getToken();
-    }
+    if (this.loggedIn()) headers["Authorization"] = "Bearer " + this.getToken();
 
-    return fetch(url, {
-      headers,
-      ...options
-    })
-      .then(this._checkStatus)
-      .then(response => response.json());
-  },
-
-  _checkStatus(response) {
-    // raises an error in case response status is not a success
-    if (response.status >= 200 && response.status < 300) {
-      // Success status lies between 200 to 300
-      return response;
-    } else {
-      var error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
+    return headers;
   }
 };

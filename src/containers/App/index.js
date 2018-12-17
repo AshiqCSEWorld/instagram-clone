@@ -7,7 +7,7 @@ import PublicRoute from "../ControlledRoute/PublicRoute";
 import asyncLoad from "../../utils/asyncLoad";
 import AuthPage from "../Auhtpage";
 
-const App = () => (
+export default () => (
   <Switch>
     <PrivateRoute
       path="/"
@@ -18,5 +18,3 @@ const App = () => (
     <Route component={asyncLoad(() => import("../../components/NoteFound"))} />
   </Switch>
 );
-
-export default App;

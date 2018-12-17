@@ -5,6 +5,8 @@
   "homepage": "https://instakilogram.netlify.com",
   "dependencies": {
     "@emotion/styled": "^10.0.5",
+    "axios": "^0.18.0",
+    "immer": "^1.9.2",
     "jwt-decode": "^2.2.0",
     "nprogress": "https://github.com/iamruhul/nprogress.git",
     "prop-types": "^15.6.2",
@@ -16,6 +18,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "reset-css": "^4.0.1"
   },
   "scripts": {
