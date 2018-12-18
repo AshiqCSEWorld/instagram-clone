@@ -3,13 +3,13 @@ import axios from "axios";
 
 export default {
   // Initializing important variables
-  domain: "http://localhost:8080", // API server domain
+  domain: "http://localhost:8080/api", // API server domain
 
   login(userName, password) {
     // Get a token from api server using the fetch api
     return axios
       .post(
-        this.domain + "/auth/login",
+        this.domain + "/users/login",
         {
           userName,
           password
