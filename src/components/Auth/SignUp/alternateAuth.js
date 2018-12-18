@@ -7,7 +7,7 @@ export default function AlternateAuth() {
   return (
     <Card className="auth__signup">
       <p>Have an account?</p>
-      <Link className="tertiary-link" to="/auth/login">
+      <Link className="tertiary-link" to="/users/login">
         Login
       </Link>
     </Card>

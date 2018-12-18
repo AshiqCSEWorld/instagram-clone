@@ -6,7 +6,7 @@ export default ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      auth.loggedIn() ? <Component {...props} /> : <Redirect to="/auth/login" />
+      auth.loggedIn() ? <Component {...props} /> : <Redirect to="/users/login" />
     }
   />
 );
