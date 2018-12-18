@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as login from "reduxStore/actions/auth/login";
+import * as login from "reduxStore/actions/user/auth";
 
 import "./login.scss";
 import "../auth.scss";
@@ -24,7 +24,7 @@ const Login = props => (
         {props.error && <ShowError error={props.payload} />}
 
         <Link
-          to="/auth/forgot-password"
+          to="/users/forgot-password"
           className="auth-content__forgot-pass secondary-color"
         >
           Forgot password?

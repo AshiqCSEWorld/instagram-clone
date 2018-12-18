@@ -1,7 +1,7 @@
 import decode from "jwt-decode";
 import axios from "axios";
 
-export default {
+const auth = {
   // Initializing important variables
   domain: "http://localhost:8080/api", // API server domain
 
@@ -27,7 +27,7 @@ export default {
   loggedIn() {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken(); // GEtting token from localstorage
-    return !!token && !this.isTokenExpired(token); // handwaiving here
+    return !!token && !this.isTokenExpired(token) && this.verifyToken();
   },
 
   isTokenExpired(token) {
@@ -39,6 +39,16 @@ export default {
       } else return false;
     } catch (err) {
       return false;
+    }
+  },
+
+  verifyToken() {
+    try {
+      return this.getProfile();
+    } catch (error) {
+      if (error.name === "InvalidTokenError") {
+        return false;
+      }
     }
   },
 
@@ -75,3 +85,5 @@ export default {
     return headers;
   }
 };
+
+export default auth;
