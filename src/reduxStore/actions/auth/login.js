@@ -15,3 +15,9 @@ export const login = (username, password) => dispatch => {
       dispatch(dispatchHelper("SIGN_IN_FAILURE", response))
     );
 };
+
+export const logout = () => dispatch => {
+  auth.logout();
+  customHistory.push("/users/login");
+  dispatch(dispatchHelper("LOG_OUT"));
+};
