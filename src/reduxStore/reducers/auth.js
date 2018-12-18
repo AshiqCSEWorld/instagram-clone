@@ -12,12 +12,15 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "SIGN_IN_REQUEST":
-      return produce(state, draft => { draft.loginPending = true });
+      return produce(state, draft => {
+        draft.loginPending = true;
+      });
 
     case "SIGN_IN_SUCCESS":
       return produce(state, draft => {
         draft.loginPending = false;
         draft.loginPayload = action.payload;
+        draft.loginError = false;
       });
 
     case "SIGN_IN_FAILURE":
