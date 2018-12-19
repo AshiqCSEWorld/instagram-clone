@@ -56,6 +56,7 @@ export default function SignUpForm({ signUpPending, signUp }) {
         placeholder="Password"
         onChange={e => setPassword(e.target.value)}
         value={password}
+        minLength="6"
       />
       <Button
         onSubmit={handleSubmit}
