@@ -7,21 +7,22 @@ const auth = {
 
   login(userName, password) {
     // Get a token from api server using the fetch api
-    return axios
-      .post(
-        this.domain + "/users/login",
-        {
-          userName,
-          password
-        },
-        {
-          headers: this.headers()
-        }
-      )
-      .then(res => {
-        this.setToken(res.data.token);
-        return res;
-      });
+    return this.fetch("/users/login", {
+      method: "post",
+      userName,
+      password
+    }).then(res => {
+      this.setToken(res.data.token);
+      return res;
+    });
+  },
+
+  fetch(url, { method, ...options }) {
+    return axios[method](
+      this.domain + url,
+      { ...options },
+      { headers: this.headers() }
+    );
   },
 
   loggedIn() {
@@ -44,7 +45,7 @@ const auth = {
 
   verifyToken() {
     try {
-      return this.getProfile();
+      return decode(this.getToken());
     } catch (error) {
       if (error.name === "InvalidTokenError") {
         return false;
@@ -65,11 +66,6 @@ const auth = {
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem("id_token");
-  },
-
-  getProfile() {
-    // Using jwt-decode npm package to decode the token
-    return decode(this.getToken());
   },
 
   headers() {
