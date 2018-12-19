@@ -21,3 +21,18 @@ export const logout = () => dispatch => {
   customHistory.push("/users/login");
   dispatch(dispatchHelper("LOG_OUT"));
 };
+
+export const signUp = props => dispatch => {
+  dispatch(dispatchHelper("SIGN_UP_REQUEST"));
+
+  auth
+    .fetch("/users/register", { method: "post", ...props })
+    .then(response => {
+      auth.setToken(response.data.token);
+      dispatch(dispatchHelper("SIGN_UP_SUCCESS", response.data));
+      customHistory.push("/");
+    })
+    .catch(({ response }) =>
+      dispatch(dispatchHelper("SIGN_UP_FAILURE", response))
+    );
+};

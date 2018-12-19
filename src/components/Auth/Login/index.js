@@ -7,11 +7,11 @@ import "./login.scss";
 import "../auth.scss";
 
 import Card from "../../Card";
-import AuthLogo from "../../LoginLogo";
+import AuthLogo from "../../authLogo";
 import OrSection from "../../OrSection";
 import AlternateAuth from "./AlternateAuth";
 import LoginForm from "./LoginForm";
-import ShowError from "./ShowError";
+import ShowError from "../ShowError";
 
 const Login = props => (
   <main className="container auth">

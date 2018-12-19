@@ -30,6 +30,28 @@ export default (state = initialState, action) => {
         draft.loginError = true;
       });
 
+    case "SIGN_UP_REQUEST":
+      return produce(state, draft => {
+        draft.signupPending = true;
+      });
+
+    case "SIGN_UP_SUCCESS":
+      return produce(state, draft => {
+        draft.signupPending = false;
+        draft.signupPayload = action.payload;
+        draft.signupError = false;
+      });
+
+    case "SIGN_UP_FAILURE":
+      return produce(state, draft => {
+        draft.signupPending = false;
+        draft.signupPayload = action.payload;
+        draft.signupError = true;
+      });
+
+    case "LOG_OUT":
+      return initialState;
+
     default:
       return state;
   }
