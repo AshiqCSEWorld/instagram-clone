@@ -12,12 +12,8 @@ import AlternateAuth from "./alternateAuth";
 import * as signUp from "reduxStore/actions/user/auth";
 import ShowError from "../ShowError";
 
-const SignUp = props => {
-	console.log("​------------")
-	console.log("​props", props)
-	console.log("​------------")
-
-  return <main className="container auth">
+const SignUp = props => (
+  <main className="container auth">
     <div className="auth-content">
       <Card className="auth-content__wrapper">
         <AuthLogo />
@@ -29,7 +25,7 @@ const SignUp = props => {
       <AlternateAuth />
     </div>
   </main>
-};
+);
 
 export default connect(
   ({ auth }) => ({
