@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../Input";
 import Button from "../../Button";
 
-export default function SignUpForm({ signUpPending, signUp }) {
+export default function SignUpForm({ signUpPending, signUp, style }) {
   const [firstName, setFirstName] = useState("");
   const [password, setPassword] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,7 +15,7 @@ export default function SignUpForm({ signUpPending, signUp }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="auth-content__form">
+    <form style={{...style}} onSubmit={handleSubmit} className="auth-content__form">
       <Input
         name="email"
         required
